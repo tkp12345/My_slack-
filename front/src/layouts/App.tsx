@@ -2,8 +2,8 @@ import React from 'react';
 import {Switch,Route,Redirect} from "react-router";
 import loadable from '@loadable/component'
 
-const  SignUp = loadable(()=> import("@pages/SignUp"));
-const  Login = loadable(()=> import("@pages/Login"));
+const  SignUp = loadable(()=> import("../pages/SignUp"));
+const  Login = loadable(()=> import("../pages/Login"));
 
 
 const App = () => {

@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, Error, Form, Header, Input, Label, LinkContainer, Success } from '@pages/SignUp/style';
+import { Button, Error, Form, Header, Input, Label, LinkContainer, Success } from './style';
 
 const SignUp = () => {
     const onSubmit = ()=>{}
 
     return (
         <div id="container">
-            <Header>Sleact</Header>
+            <Header>회원가입</Header>
             <Form onSubmit={onSubmit}>
                 <Label id="email-label">
                     <span>이메일 주소</span>
