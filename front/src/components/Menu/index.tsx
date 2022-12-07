@@ -3,7 +3,7 @@ import {CloseModalButton, CreateMenu} from "./style";
 
 interface  Props{
     show: boolean;
-    onCloseModal:()=>void;
+    onCloseModal:(e:any)=>void;
     style:CSSProperties;
     closeButton?:boolean;
 }
@@ -21,7 +21,7 @@ const Menu:FC<PropsWithChildren<Props>> = ({children,style,show,closeButton,onCl
         <CreateMenu onClick={onCloseModal}>
             <div onClick={stopPropagation} style={style}>
                 {closeButton && <CloseModalButton onClick={onCloseModal}>
-                    $items;
+                    x
                 </CloseModalButton>}
                 {children}
             </div>

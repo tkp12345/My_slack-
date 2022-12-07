@@ -6,6 +6,8 @@ export const Container = styled.div`
   height: calc(100vh - 38px);
   flex-flow: column;
   position: relative;
+  border-left:1px solid #007FFF;
+
 `;
 
 export const Header = styled.header`
@@ -17,6 +19,7 @@ export const Header = styled.header`
   padding: 20px 16px 20px 20px;
   font-weight: bold;
   align-items: center;
+    border-bottom:1px solid #007FFF;
 `;
 
 export const DragOver = styled.div`
