@@ -28,6 +28,10 @@ import useInput from '../../../../front/src/hooks/useInput';
 import { toast } from 'react-toastify';
 import CreateChannelModal from '../../../../front/createChannelModal';
 import {useParams} from "react-router";
+import InviteWorkspaceModal from '../../../../front/src/components/InviteWorkspaceModal';
+import InviteChannelModal from "../../components/InviteChannelModal";
+import ChannelList from '../../../../front/src/components/ChannelList';
+import DMList from '../../../../front/src/components/DMList';
 
 const Channel = loadable(()=> import("../../pages/Channel"));
 const DirectMessage = loadable(()=> import("../../pages/DirectMessage"));
@@ -37,6 +41,7 @@ const Workspace:VFC = () => {
     const [showUserMenu, setShowUserMenu] = useState(false);
     const [showCreateWorkspaceModal, setShowCreateWorkspaceModal] = useState(false);
     const [showInviteWorkspaceModal, setShowInviteWorkspaceModal] = useState(false);
+    const [showInviteChannelModal, setShowInviteChannelModal] = useState(false);
     const [showCreateChannelModal, setShowCreateChannelModal] = useState(false);
     const [showWorkspaceModal, setShowWorkspaceModal] = useState(false);
     const [newWorkspace, onChangeNewWorkspace, setNewWorkspace] = useInput('');
@@ -71,6 +76,9 @@ const Workspace:VFC = () => {
     const onCloseModal =useCallback(()=>{
     setShowCreateWorkspaceModal(false)
         setShowCreateChannelModal(false)
+        setShowCreateChannelModal(false)
+        setShowInviteChannelModal(false)
+        setShowInviteWorkspaceModal(false)
     },[])
 
     const onClickInviteWorkspace = useCallback(() => {
@@ -151,11 +159,13 @@ const Workspace:VFC = () => {
                         <Menu show={showWorkspaceModal} onCloseModal={toggleWorkspaceModal} style={{ top: 95, left: 80 }}>
                         <WorkspaceModal>
                             <h2>sleat</h2>
+                            <button onClick={onClickInviteWorkspace}>워크스페이스에 사용자 초대</button>
                             <button onClick={onClickAddChannel}>채널 만들기</button>
                             <button onClick={onLogout}>로그아웃</button>
                         </WorkspaceModal>
                     </Menu>
-                        {channelData?.map(v=>(<div>{v.name}</div>))}
+                        <ChannelList/>
+                        <DMList/>
                     </MenuScroll>
                 </Channels>
                 <Chats>
@@ -182,6 +192,16 @@ const Workspace:VFC = () => {
                 show={showCreateChannelModal}
                 onCloseModal={onCloseModal}
                 setShowCreateChannelModal={setShowCreateChannelModal}
+            />
+            <InviteWorkspaceModal
+                show={showInviteWorkspaceModal}
+                onCloseModal={onCloseModal}
+                setShowInviteWorkspaceModal={setShowInviteWorkspaceModal}
+            />
+            <InviteChannelModal
+                show={showInviteChannelModal}
+                onCloseModal={onCloseModal}
+                setShowInviteChannelModal={setShowInviteChannelModal}
             />
             {/*{children}*/}
         </div>

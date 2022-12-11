@@ -78,7 +78,7 @@ export const Channels = styled.nav`
   width: 260px;
   display: inline-flex;
   flex-direction: column;
-  background: #ffffff;
+  background: #454545;
   color: rgb(188, 171, 188);
   vertical-align: top;
 

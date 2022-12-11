@@ -86,6 +86,13 @@ const config: Configuration = {
         port: 3096,
         devMiddleware: { publicPath: '/dist/' },
         static: { directory: path.resolve(__dirname) },
+        //proxy server 설정
+        // proxy:{
+        //     '/api':{
+        //         target:'http://localhost:3096',
+        //         changeOrigin:true,
+        //     }
+        // }
     },
 };
 
