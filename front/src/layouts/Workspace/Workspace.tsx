@@ -34,7 +34,7 @@ import ChannelList from '../../../../front/src/components/ChannelList';
 import DMList from '../../../../front/src/components/DMList';
 
 const Channel = loadable(()=> import("../../pages/Channel"));
-const DirectMessage = loadable(()=> import("../../pages/DirectMessage"));
+const DirectMessage = loadable(()=> import("../../components/DirectMessage"));
 
 
 const Workspace:VFC = () => {
